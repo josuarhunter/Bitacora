@@ -1,0 +1,67 @@
+// sombra barra navegacion
+.navbar {
+    box-shadow: 0px 1px 10px;
+}
+
+// estilos de boton menu
+  // sombra boton menu 
+  .navbar-toggler {
+      box-shadow: 0px 3px 4px;
+    }
+  // color fondo del header
+  .offcanvas-header{
+    background:#0a1117; 
+  }
+  // Boton de cerrar menu
+  // .btn-close {
+  //   color: white;
+  // }
+  // boton de usuario
+  .btn.hover {
+    color: white;
+  }
+  // color al pasar mouse sobre usuario
+  .btn.hover:hover {
+    background-color: #e8406b; 
+  }
+  // color fondo del body menu
+  .offcanvas-body{
+    background: #152330;
+  }
+  .lista-opciones {
+    color: white;
+  }
+  .nav-link {
+    color: white;
+  }
+  // divisor
+  .hr {
+    color: white;
+  }
+  // boton soporte
+  .btn {
+    color: white;
+  }
+  .btn:hover{
+    background-color: #e8406b; 
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+// .nav-link
+//     background: #e8406b;
+//     background: #152330;
+//     background: #1bb2a5;}

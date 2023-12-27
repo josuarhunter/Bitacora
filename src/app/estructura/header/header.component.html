@@ -1,0 +1,62 @@
+<!-- Barra de navegacion -->
+<header>
+  <nav class="navbar" style="background-color: white;">
+    <div class="container-fluid">
+      <img src="assets/img/logonouvux.png" alt="logo" height="50rem" width="50rem" class="img-fluid"> 
+
+<!-- menu lista Desplegable de barra de navegacion-->
+    <div class="btn-group ">
+      
+      <button class="btn btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;"> Bitacora registro de caso 
+       </button>
+
+      <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+      <li><a class="dropdown-item" href="#"><i class="bi bi-journal-plus"></i> Registrar </a></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-search"></i> Consultar </a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-file-check"></i> Cierre o escalamiento </a></li>
+      </ul>
+    </div>
+
+    
+ <!-- boton menu Desplegable   -->
+      <button class="navbar-toggler btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <!-- boton de usuario -->
+          <div class="btn-group ">
+            <button class="btn dropdown-toggle hover" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person"></i> Usuario: josuar gil
+             </button>
+                       <!-- , {{ username }} -->
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item" href="#">Mi perfil </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#"><i class="bi bi-door-open"></i>Cerrar sesión</a></li>
+            </ul>
+          </div>
+
+          <!-- boton cerrar -->
+          <div data-bs-theme="dark">
+
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-theme="dark"></button>
+          </div>
+        </div>
+
+        <div class="offcanvas-body">
+
+          <button type="button" class="btn "><i class="bi bi-journal-plus"></i> Registrar</button> <br>
+          <button type="button" class="btn "><i class="bi bi-search"></i> Consultar</button> <br>
+          <button type="button" class="btn "><i class="bi bi-file-check"></i> Cierre o escalamiento</button> <br>
+          
+          <hr class="hr">
+
+            <button type="button" class="btn "><i class="bi bi-tools"></i> Soporte</button>
+        
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
