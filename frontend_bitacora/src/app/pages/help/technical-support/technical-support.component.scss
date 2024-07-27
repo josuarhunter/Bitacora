@@ -1,0 +1,131 @@
+/* contenedor principal */
+.container-principal {
+    min-height: 100vh;
+}
+h1 {
+        margin: auto;
+        text-align: center;
+        padding: 1rem;
+        font-size: 2rem;
+    }
+/* contenedor soporte tecnico */
+.container-soporte{
+    padding: 0%;
+    max-width: 60rem;
+    margin: 2rem auto;
+    border: solid 2px #1bb2a5;
+    border-radius: 1rem;
+}
+    
+/* contenedor1 */
+.container1 {
+    padding: 1rem;
+    margin: auto;
+    width: 28rem;
+
+    
+}
+    label {
+        font-weight: bold;
+    }
+    /* entrada de texto */
+    .comentario {
+        height: 5rem;
+        max-width: 23.4rem;
+    }
+    .p2 {
+        margin-top: 2rem;
+    }
+    /* contenedor subir imagen */
+    .image-upload {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+    }
+        /* estilo entrada de datos */
+        .form-control {
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.66);
+        }
+        /* boton eliminar archivo */
+        .remove-button {
+            margin: auto;
+            border-radius: 0.5rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            color: #000000;
+        }
+        .remove-button:hover {
+            color: #e8406b;
+        }
+/* contenedor2 */
+.container2 {
+    padding: 1rem;
+    margin: auto;
+    width: 30rem;
+    
+}
+    .p3 {
+        font-weight: bold;
+        margin-left: 12px;
+    }
+    /* contenedor contacto */
+    .container-contacto {
+        width: 20rem;
+        margin: auto;
+        padding: 1rem;
+    }
+    /* entrada de datos contacto */
+    .contacto {
+        margin: 0.8rem;
+        width: 15rem;
+    }
+/* contenedor enviar */
+.container-enviar {
+    width: 10rem;
+    margin: auto;
+}
+/* boton enviar */
+.btn {
+    background: #1bb2a5;
+    border: 0;
+    margin: 2rem;
+}
+    .btn:hover{
+        background-color: #2c857c; 
+    }
+
+.alert {
+    font-size: 11px;
+    color: red;
+    margin: auto;
+    margin-left: auto;
+    margin-left: 17rem;
+    padding-left: 0px;
+    padding-top: 0px;
+    width: 23rem;
+    }
+
+
+    @media (max-width: 576px) { 
+        h1 {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 0.9rem;
+        }
+        .p3 {
+            font-size: 1rem;
+        }
+        .container-soporte{
+            width: 22rem;
+            margin: auto;
+        }
+    }
+
+
+
+
+

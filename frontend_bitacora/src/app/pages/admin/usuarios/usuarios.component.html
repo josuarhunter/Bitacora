@@ -1,0 +1,66 @@
+<!-- contenedor principal -->
+<div class="container-principal">
+
+    <h1><i class="bi bi-person-lines-fill"></i> Lista de usuarios</h1>
+    <!-- contenido de usuarios -->
+    <div class="usuarios">   
+        <!-- contenedor menu -->
+        <div class="menu">
+            <!-- formulario de busqueda --> 
+            <form class="form-busqueda" [formGroup]="formulario" (ngSubmit)="buscarUsuario()">
+                <div class="busqueda">
+                    <label for="buscar"><i class="bi bi-search"></i> Buscar usuario</label>
+                    <input type="text" id="buscar" formControlName="nombre_usuario" class="form-control" placeholder="Nombre de usuario">
+                    <div class="alert" >
+                        <span *ngIf="formulario.get('nombre_usuario')?.errors?.['required'] && formulario.get('nombre_usuario')?.touched">Este campo es obligatorio!</span>
+                    </div>
+                </div>
+                    <button class="btn btn-buscar" type="submit"><i class="bi bi-search"></i> Buscar</button>
+            </form>
+            
+            <!-- boton registrar usuario -->
+            <button class="btn btn-registrar" (click)="redirectRegistrarusuario()"><i class="bi bi-person-add"></i> Registrar usuario</button>
+            <!-- boton de home -->
+             <button class="btn btn-home" (click)="obtenerUltimosUsuarios()"><i class="bi bi-house"></i></button>
+        </div>
+        
+        <!-- contenedor de resultado busqueda -->
+        <div class="container-resultado">        
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Correo</th>
+                    <th>Nombre de usuario</th>
+                    <!-- <th>Rol</th> -->
+                    <th>Acceso de usuario</th>
+                    <th>Acciones</th>
+                    
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let usuario of usuarios">
+                    <td>{{ usuario.id_usuario }}</td>
+                    <td>{{ usuario.nombres }}</td>
+                    <td>{{ usuario.apellidos }}</td>
+                    <td>{{ usuario.correo }}</td>
+                    <td>{{ usuario.nombre_usuario }}</td>
+                    <!-- <td>{{ usuario.fo_tipo_usuario }}</td> -->
+                    <td>{{ usuario.estado }}</td>
+
+                    <td>
+                        <button class="btn btn-editar" (click)="editarUsuario(usuario.id_usuario)"><i class="bi bi-pencil-square"></i> </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- componente de edición -->
+    <app-editar-usuario *ngIf="mostrarEditar" 
+                        [usuario]="usuarioSeleccionado" 
+                        (cerrar)="cerrarEditar()"
+                        ></app-editar-usuario> 
+</div>

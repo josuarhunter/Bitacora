@@ -1,0 +1,55 @@
+<!-- Barra de navegacion -->
+<header>
+  <nav class="navbar">
+    <div class="container-fluid">
+      <!-- barra navegacion -->
+      <div class="container">
+        <img src="assets/img/C3_logo-vertical-blanco-color_Veronica-Chaves.png" alt="logo" height="50rem" width="50rem" class="img-fluid"> 
+        <h1>Bitacora registro de caso </h1>
+      </div>
+      
+      <!-- boton abrir menu -->
+      <button type="button" class="boton-menu" (click)="isExpanded = !isExpanded">
+        <i class="bi bi-justify-right"></i>
+      </button>
+
+      <!-- contenedor de menu -->
+      <div [class.expanded]="isExpanded" class="menu">
+        <!-- contenedor usuario y boton cerrar -->
+        <div class="container1">
+          <!-- contenedor de usuario -->
+          <div class="usuario dropdown">
+            <button class="btn usuario dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-lock"></i> Usuario:
+            </button>
+            <div class="dropdown-menu">
+              <div class="nombre-usuario"><i class="bi bi-person-circle"></i> <span>{{ username }}</span></div>
+              <hr class="hr">
+                <button type="button" class="btn dropdown-item cerrarSesion" (click)="logout()"><i class="bi bi-door-open"></i> Cerrar sesión</button>
+            </div>
+          </div>
+          
+          <!-- boton cerrar -->
+          <button type="button" class="boton-cerrar" (click)="isExpanded = false">
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+
+        <!-- contenido de menu -->
+        <div class="container2">
+          <!-- boton menu admin-->
+          <a *ngIf="canShowAdmin()" (click)="redirectAdmin()"><i class="bi bi-person-gear"></i> Admin</a>
+
+          <!-- boton registrar, consultar, reportes, soporte -->
+          <a *ngIf="canShowRegistrar()" (click)="redirectRegistrar()"><i class="bi bi-journal-plus"></i> Registrar</a>
+          <a *ngIf="canShowConsultar()" (click)="redirectConsultar()"><i class="bi bi-search"></i> Consultar</a> 
+          <a *ngIf="canShowReportes()" (click)="redirectReportes()"><i class="bi bi-database"></i> Reportes</a>
+          <hr class="hr">          
+          <a (click)="redirectSoporte()"><i class="bi bi-question-circle"></i> Ayuda</a>
+        </div>
+
+        
+      </div>
+     
+    </div>
+  </nav>
+</header>

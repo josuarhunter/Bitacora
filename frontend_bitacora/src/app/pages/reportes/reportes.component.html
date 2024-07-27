@@ -1,0 +1,78 @@
+<app-header></app-header>
+<main>
+  <h1><i class="bi bi-database"></i> Reportes</h1>
+  <!--  contenedor reporte -->
+  <div class="reporte">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <!-- contenedor de busqueda -->
+      <div class="row g-3 formulario">
+        <!-- fecha inicial -->
+        <div class="col-md-3">
+          <label for="fecha_inicial" class="form-label"><i class="bi bi-calendar2"></i> Fecha inicial:</label>
+            <input type="date" class="form-control" id="fecha_inicial" formControlName="fecha_inicial">
+            <div class="alert">
+              <span *ngIf="formulario.get('fecha_inicial')?.errors?.['required'] && formulario.get('fecha_inicial')?.touched">Este campo es obligatorio!</span>
+            </div>
+        </div>
+        <!-- fecha final -->
+        <div class="col-md-3">
+          <label for="fecha_final" class="form-label"><i class="bi bi-calendar2"></i> Fecha final:</label>
+            <input type="date" class="form-control" id="fecha_final" formControlName="fecha_final">
+            <div class="alert">
+              <span *ngIf="formulario.get('fecha_final')?.errors?.['required'] && formulario.get('fecha_final')?.touched">Este campo es obligatorio!</span>
+            </div>
+        </div>
+        <!-- boton buscar -->
+        <div class="col-md-3 botones">
+          <button class="btn btn-buscar" type="submit"><i class="bi bi-search"></i> Buscar</button>
+          <button class="btn btn-home" [disabled]="!resultados.length" (click)="reiniciarConsulta()"><i class="bi bi-house"></i></button>
+          <button class="btn btn-descargar" [disabled]="!resultados.length" (click)="descargarReporte()"><i class="bi bi-download"></i> Descargar</button>
+          
+        </div>
+        <div class="alert a2" *ngIf="mensajeError" >{{ mensajeError }}</div> 
+      </div>
+    </form>
+    <!-- contenedor tabla -->
+    <div class="container-table" *ngIf="resultados.length > 0">
+      <table class="table">
+          <thead>
+            <tr>
+              <th>Analista Accesos</th>
+              <th>Caso MyIT</th>
+              <th>Tipo de solicitud</th>
+              <th>Cedula</th>
+              <th>Identidad</th>
+              <th>Nombre Completo Usuario</th>
+              <th>Apellidos Completo Usuario</th>
+              <th>Aplicación/Legado/BD/SO</th>
+              <th>Herramienta</th>
+              <th>Id Tarea</th>
+              <th>Grupo Resolutor</th>
+              <th>Fecha Solución</th>
+              <th>Estado del caso</th>
+              <th>Observaciónes</th>		
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let resultado of resultados">
+              <td>{{ resultado.usuario }}</td>
+              <td>{{ resultado.no_caso }}</td>
+              <td>{{ resultado.tipo_solicitud }}</td>
+              <td>{{ resultado.cedula_cliente }}</td>
+              <td>{{ resultado.identidad_cliente }}</td>
+              <td>{{ resultado.nombres_cliente }}</td>
+              <td>{{ resultado.apellidos_cliente }}</td>
+              <td>{{ resultado.aplicacion }}</td>
+              <td>{{ resultado.herramienta }}</td>
+              <td>{{ resultado.id_tarea }}</td>
+              <td>{{ resultado.grupo_resolutor }}</td>
+              <td>{{ resultado.fecha_registro }}</td>
+              <td>{{ resultado.estado_caso }}</td>
+              <td>{{ resultado.observaciones }}</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+<app-footer></app-footer>

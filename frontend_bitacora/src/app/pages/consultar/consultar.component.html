@@ -1,0 +1,121 @@
+<app-header></app-header>
+
+<div class="container-principal">
+    <h1><i class="bi bi-search"></i> Busqueda de caso</h1>
+  <!--  contenedor busqueda de caso -->
+  <div class="busqueda-caso">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <!-- contenedor formulario de caso -->
+      <div class="row g-3 formulario">
+       <!-- numero de Identifacion -->
+        <div class="col-md-3">
+            <label for="no_identificacion" class="form-label"><i class="bi bi-person"></i> Identificacion</label>
+            <input type="text" class="form-control" id="no_identificacion" formControlName="no_identificacion" placeholder="ingresar numero ID">
+            <div class="alert">
+              <span *ngIf="formulario.get('no_identificacion')?.errors?.['required'] && formulario.get('no_identificacion')?.touched">Este campo es obligatorio!</span>
+            </div>
+        </div>
+        <!-- tipo de Identifacion -->
+        <div class="col-md-3">
+          <label for="tipo_identificacion" class="form-label"><i class="bi bi-person-vcard"></i> Tipo Identificacion</label>
+              <select class="form-select" id="tipo_identificacion" formControlName="tipo_identificacion">
+              <option selected disabled value="">Seleccione...</option>
+              <option value="1">ID usuario</option>
+              <option value="2">Cedula</option>
+              </select>
+              <div class="alert">
+                <span *ngIf="formulario.get('tipo_identificacion')?.errors?.['required'] && formulario.get('tipo_identificacion')?.touched">Este campo es obligatorio!</span>
+              </div>
+        </div>
+
+        <!-- fecha inicial -->
+        <div class="col-md-3">
+          <label for="fecha_inicial" class="form-label"><i class="bi bi-calendar2"></i> Fecha inicial:</label>
+            <input type="date" class="form-control" id="fecha_inicial" formControlName="fecha_inicial">
+        </div>
+        <!-- fecha final -->
+        <div class="col-md-3">
+          <label for="fecha_final" class="form-label"><i class="bi bi-calendar2"></i> Fecha final:</label>
+            <input type="date" class="form-control" id="fecha_final" formControlName="fecha_final">
+        </div>
+        <!-- boton buscar -->
+        <div class="col-md-2">
+          <button class="btn btn-buscar" type="submit"><i class="bi bi-search"></i> Buscar</button>
+          <button class="btn btn-home" (click)="reiniciarConsulta()"><i class="bi bi-house"></i></button>
+        </div>
+        <div class="alert a2" *ngIf="mensajeError" >{{ mensajeError }}</div> 
+          
+      </div>     
+    </form>
+
+    <!-- resultado de busqueda 1-->
+    <div class="container-resultado1" *ngIf="resultados.length > 0">        
+      <div class="row resultado1" *ngFor="let resultado of resultados">
+        <div class="col">
+          <h6>No. caso</h6>
+          <p>{{ resultado.no_caso }}</p>
+        </div>
+        <div class="col">
+          <h6>Fecha de registro</h6>
+          <p>{{ resultado.fecha_registro }}</p>
+        </div>
+        <div class="col">
+          <h6>Tipo solicitud</h6>
+          <p>{{ resultado.tipo_solicitud }}</p>
+        </div>
+        <div class="col">
+          <h6>Acción</h6>
+          <button class="btn btn-ver" (click)="verDetalles(resultado)"><i class="bi bi-eye"></i></button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- resultado de busqueda 2-->
+    <div class="container-resultado2" *ngIf="casoSeleccionado">        
+      <div class="row resultado2">
+        <div class="col">
+          <h6>No. caso</h6>
+          <p>{{ casoSeleccionado.no_caso }}</p>
+        </div>
+        <div class="col">
+          <h6>Tipo solicitud</h6>
+          <p>{{ casoSeleccionado.tipo_solicitud }}</p>
+        </div>
+        <div class="col">
+          <h6>Aplicación</h6>
+          <p>{{ casoSeleccionado.aplicacion }}</p>
+        </div>
+        <div class="col">
+          <h6>Cedula</h6>
+          <p>{{ casoSeleccionado.cedula_cliente }}</p>
+        </div>
+        <div class="col">
+          <h6>ID usuario</h6>
+          <p>{{ casoSeleccionado.identidad_cliente }}</p>
+        </div>
+        <div class="col">
+          <h6>Estado</h6>
+          <p>{{ casoSeleccionado.estado_caso }}</p>
+        </div>
+        <div class="col">
+          <h6>Fecha registro</h6>
+          <p>{{ casoSeleccionado.fecha_registro }}</p>
+        </div>
+        <div class="col">
+          <h6>Gestor del caso</h6>
+          <p>{{ casoSeleccionado.usuario }}</p>
+        </div>
+        <div class="col">
+          <h6>Observaciones</h6>
+          <p class="observaciones">{{ casoSeleccionado.observaciones }}</p>
+        </div>
+      </div>  
+    </div>
+    
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+

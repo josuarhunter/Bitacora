@@ -1,0 +1,41 @@
+<!-- contenedor principal -->
+<div class="container-fluid">
+
+<!-- contenedor fondo negro -->
+<div class="container-negro"></div>
+  <!-- contenedor formulario -->
+  <div class="container-sm">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+      <h1>Inicia sesión</h1>
+
+      <!-- entrada de datos -->
+        <label for="username">Nombre de usuario:</label>
+        <input type="text" id="username" formControlName="username" class="form-control" placeholder="Ingresar usuario" >
+          <div class="alert" >
+            <span *ngIf="formulario.get('username')?.errors?.['required'] && formulario.get('username')?.touched">Este campo es obligatorio!</span>
+          </div>
+        <label for="password" class="margin" >Contraseña:</label>
+        <input type="password" id="password" formControlName="password" class="form-control" placeholder="Ingresar contraseña" >
+          <div  class="alert" >
+            <span *ngIf="formulario.get('password')?.errors?.['required'] && formulario.get('password')?.touched">Este campo es obligatorio!</span>
+          </div>
+          <div *ngIf="errorMessage" class="alert" >{{ errorMessage }}</div>
+          
+       
+      <!-- boton de formulario -->
+      <button class="btn btn-dark Ingresar">Ingresar</button>
+    </form>
+
+    <p>Contacto por correo: <a href="mailto:josuar4gil@gmail.com?subject=Hola%20Mundo&body=Este%20es%20un%20correo%20de%20prueba." class="link">Soporte</a></p>
+  </div>
+
+
+  <!-- contenedor imagen -->
+  <div class="container img">
+    <img src="assets/img/cloud_security.png" alt="logo" height="" width="" class="img-1">
+    <img src="assets/img/C3_logo-horizontal-color_Veronica-Chaves.png" alt="logo" height="" width="" class="img-2">
+  </div>
+</div>
+
+

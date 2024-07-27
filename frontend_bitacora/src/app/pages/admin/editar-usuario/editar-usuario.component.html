@@ -1,0 +1,106 @@
+<!-- contenedor formulario editar -->
+<div class="container-principal">
+    <div class="container-editar">
+        <div class="titulo">
+        <h1><i class="bi bi-person-gear"></i> Editar usuario</h1>
+        <button class="btn btn-cerrar" (click)="cerrar.emit()"><i class="bi bi-x-circle"></i></button>
+        </div>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="row" >
+            <!-- nombres -->
+            <div class="col">
+                <label for="nombres" class="form-label"><i class="bi bi-person"></i> Nombres</label>
+                <input type="text" class="form-control" id="nombres" formControlName="nombres" placeholder="Nombres">
+                <div class="alert" >
+                    <span *ngIf="formulario.get('nombres')?.errors?.['required'] && formulario.get('nombres')?.touched">Este campo es obligatorio!</span>
+                </div>
+            </div>
+            <!-- Apellidos -->
+            <div class="col">
+                <label for="apellidos" class="form-label"><i class="bi bi-person"></i> Apellidos</label>
+                <input type="text" class="form-control" id="apellidos" formControlName="apellidos" placeholder="Apellidos">
+                <div class="alert" >
+                    <span *ngIf="formulario.get('apellidos')?.errors?.['required'] && formulario.get('apellidos')?.touched">Este campo es obligatorio!</span>
+                </div>
+            </div>
+            <!-- tipo de documento -->
+            <div class="col">
+                <label for="tipo_documento" class="form-label"><i class="bi bi-person-vcard"></i> Tipo de documento</label>
+                    <select class="form-select" id="tipo_documento" formControlName="tipo_documento">
+                    <option selected disabled value="">Seleccione...</option>
+                    <option value="CC">Cédula de Ciudadanía</option>
+                    <option value="RC">Registro Civil</option>
+                    <option value="CE">Cédula de Extranjería</option>
+                    <option value="DNI">Documento Nacional de Identidad</option>
+                    </select>
+                    <div class="alert" >
+                        <span *ngIf="formulario.get('tipo_documento')?.errors?.['required'] && formulario.get('tipo_documento')?.touched">Este campo es obligatorio!</span>
+                    </div>
+            </div>
+            <!-- numero de Identifacion -->
+            <div class="col">
+                <label for="no_identificacion" class="form-label"><i class="bi bi-person-vcard"></i> No. identificacion</label>
+                <input type="number" class="form-control" id="no_identificacion" formControlName="no_identificacion" placeholder="Identifacion">
+                <div class="alert" >
+                    <span *ngIf="formulario.get('no_identificacion')?.errors?.['required'] && formulario.get('no_identificacion')?.touched">Este campo es obligatorio!</span>
+                </div>
+            </div>
+            <!-- Correo electronico -->
+            <div class="col">
+                <label for="correo" class="form-label"><i class="bi bi-envelope-at"></i> Correo electronico</label>
+                <input type="email" class="form-control" id="correo" formControlName="correo" placeholder="Correo">
+                <div class="alert" >
+                    <span *ngIf="formulario.get('correo')?.errors?.['required'] && formulario.get('correo')?.touched">Este campo es obligatorio!</span>
+                </div>
+            </div>
+            <!-- tipo de usuario -->
+            <div class="col">
+                <label for="tipo_usuario" class="form-label"><i class="bi bi-person-lock"></i> Tipo de usuario</label>
+                    <select class="form-select" id="tipo_usuario" formControlName="fo_tipo_usuario">
+                    <option selected disabled >Seleccione...</option>
+                    <option value="1">Analista</option>
+                    <option value="2">Lider</option>
+                    <option value="3">Gestor de servicio</option>
+                    <option value="4">Administrador</option>
+                    </select>
+                <div class="alert" >
+                    <span *ngIf="formulario.get('tipo_usuario')?.errors?.['required'] && formulario.get('tipo_usuario')?.touched">Este campo es obligatorio!</span>
+                </div>
+            </div>
+            <!-- Usuario asignado -->
+            <div class="col">
+                <label for="nombre_usuario" class="form-label"><i class="bi bi-person-circle"></i> Usuario</label>
+                <input type="text" class="form-control" id="nombre_usuario" formControlName="nombre_usuario" placeholder="Usuario">
+                <div class="alert" >
+                    <span *ngIf="formulario.get('nombre_usuario')?.errors?.['required'] && formulario.get('nombre_usuario')?.touched">Este campo es obligatorio!</span>
+                </div>
+            </div>
+            <!-- Contraseña asignada -->
+            <div class="col">
+                <label for="contraseña" class="form-label"><i class="bi bi-key"></i> Contraseña</label>
+                <input type="text" class="form-control" id="contraseña" formControlName="contraseña" placeholder="Contraseña">
+                <div class="alert" >
+                    <span *ngIf="formulario.get('contraseña')?.errors?.['required'] && formulario.get('contraseña')?.touched">Este campo es obligatorio!</span>
+                </div> 
+            </div>
+            <!-- estado de usuario -->
+            <div class="col">
+                <label for="estado" class="form-label"><i class="bi bi-person-lock"></i> Acceso de usuario</label>
+                    <select class="form-select" id="estado" formControlName="estado">
+                    <option selected disabled value="">Seleccione...</option>
+                    <option value="HABILITADO">HABILITADO</option>
+                    <option value="DESHABILITADO">DESHABILITADO</option>
+                    </select>
+                <div class="alert" >
+                    <span *ngIf="formulario.get('estado')?.errors?.['required'] && formulario.get('estado')?.touched">Este campo es obligatorio!</span>
+                </div>
+            </div>
+            
+            <!-- contenedor de botones -->
+            <div class="container-button">
+                <button class="btn btn-guardar" type="submit"><i class="bi bi-floppy"></i> Guardar</button>
+            </div>         
+        </form>
+    </div>
+</div>
+
+

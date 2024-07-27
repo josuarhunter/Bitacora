@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<div class="container-principal">
+    <!-- titulo -->
+    <h1><i class="bi bi-headset"></i> Soporte técnico</h1>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">    
+    <!-- contenedor soporte tecnico -->
+    <div class="container-soporte row">
+        <!-- contenedor1 -->
+        <div class="container1 col-1">
+            <p class="p1">Lamentamos que no hayas podido solucionar tu falla, reportaremos tu incidente con el personal de soporte, quien se comunicará contigo lo más pronto posible; por favor bríndanos más detalles acerca del problema:</p>
+            <!-- entrada de texto -->
+            <div class="container-comentario">
+                <label for="comentario" class="form-label">Observaciones:</label>
+                <textarea class="form-control comentario" formControlName="comentario" id="comentario" rows="1"></textarea>        
+            </div>
+
+            <p class="p2">Si cuentas con una imagen que nos ayuden a entender mejor tu falla, por favor adjúntala a continuación:</p>
+            <!-- subir imagen -->
+            <div class="image-upload">
+                <input type="file" class="form-control" accept="image/*" formControlName="image" (change)="onFileChange($event)">
+                <button type="button" class="remove-button" (click)="removeFile()">
+                <i class="bi bi-trash"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- contenedor 2 -->
+        <div class="container2 col-2">
+            <!-- datos de contacto -->
+            <div class="container-contacto">
+                <p class="p3">Indícanos tus datos de contacto:</p>
+                <input type="text" class="form-control contacto" formControlName="username" placeholder="Nombre de usuario">
+                <input type="email" class="form-control contacto" formControlName="correo" placeholder="Correo">
+            </div>
+            <div class="container-enviar">
+                <button class="btn btn-dark" type="submit" ><i class="bi bi-send"></i> Enviar</button>
+            </div>
+        </div>  
+        
+        <!-- mensaje de error -->
+        <div *ngIf="error" class="alert">{{ error }}</div>
+    </div>        
+    </form>
+</div>
+
+
+
+<app-footer></app-footer>

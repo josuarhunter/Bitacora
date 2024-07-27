@@ -1,0 +1,153 @@
+// estilos barra de navegacion
+.navbar {
+  box-shadow: 0px 1px 10px;
+  background: #111c26;
+}
+.container {
+  display: contents;
+}
+/* titulo */
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+/* Reducir el tamaño del título para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  h1 {color: #ffffff;
+    font-size: 1.2rem; 
+  }
+}
+
+/* boton menu barra navegacion*/
+.boton-menu {
+  border: none;
+  background: #ffffff;
+  border-radius: 6px;
+  font-size: 25px;
+  padding-left: 8px;
+  padding-right: 8px;
+
+} 
+/* contenedor menu */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 15rem;
+  height: 100%;
+  background: #152330;
+  transition: right 0.3s ease-out;
+  color: white;
+  z-index: 1;
+}
+  /* Posicion menu expandido */
+  .menu.expanded {
+    right: 0;
+  }
+
+/* menu desplegable dropdown-menu */
+.dropdown-menu {
+  background:#111c26;
+  width: 12rem;
+}
+  .dropdown-item {
+    width: 10rem;
+    margin: auto;
+  }
+/* contenedor1 */
+.container1 {
+  background: #111c26;
+  display: flex;
+  height: 4rem;
+}
+  /* contenedor usuario */
+  .usuario {
+    margin: auto;
+    color: white;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .nombre-usuario {
+    margin: auto;
+    text-align: center;
+    color: white;
+    display: grid;
+  }
+  .bi-person-circle {
+    font-size: 3rem;
+  }
+  button:hover{
+    background-color: #e8406b; 
+  }
+  /* boton cerrar sesion */
+  .cerrarSesion {
+    color: white;
+    width: 10rem;
+    padding: 5px;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    text-align: center;
+    }   
+  /* boton cerrar menu */
+  .boton-cerrar {
+    color: white;
+    background: #152330;
+    height: 2rem;
+    margin: auto;
+    margin-right: 1rem;
+    width: 2rem;
+    border-radius: 16px;
+    border: none; 
+  }
+
+/* contenedor2 */
+.container2 {
+ display: grid;
+}
+
+
+  /* enlaces de navegacion */
+  a {
+    color: white;
+    text-decoration: none;
+    width:100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  a:hover{
+    background-color: #e8406b; 
+  }
+  // divisor
+  .hr {
+    color: white;
+  }
+
+/* iconos */
+.bi-menu-up, .bi-journal-plus, .bi-search, .bi-database, .bi-question-circle, .bi-person-circle, .bi-person-lock, .bi-door-open, .bi-person-gear {
+  color: #1bb2a5;
+}
+
+
+
+
+
+
+
+
+
+
+  
+
+
+// .nav-link
+//     background: #e8406b;
+//     background: #152330;
+//     background: #1bb2a5;}

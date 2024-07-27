@@ -1,0 +1,110 @@
+/* contenedor de editar */
+.container-principal {
+    min-height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    bottom: 0px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.59);
+    z-index: 1000;
+}
+/* contenedor de editar */
+.container-editar {
+    padding: 0%;
+    width: 45rem;
+    margin: auto;
+    margin-top: 5rem;
+    border-radius: 1rem;
+    background: #111c26; 
+    color: white;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.81); 
+}
+
+.titulo {
+    display: flex;
+}
+
+h1 {
+    margin: auto;
+    margin-right: 0rem;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.btn-cerrar {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    margin: auto;
+    margin-right: 1rem;
+}
+.bi {
+    color: #1bb2a5;
+}
+
+    form {
+        width: 41rem;
+        margin: auto;
+    }
+    .col {
+        margin-top: 1rem;
+    }
+    .form-control, .form-select {
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.66);
+    }
+
+/* entrada de datos */
+input, label, select {
+    width: 12rem;
+}
+
+.alert {
+    font-size: 11px;
+    color: red;
+    margin: auto;
+    margin-left: auto;
+    padding: 0;
+    margin-left: 11px;
+  }
+
+
+/* contendor de botones */
+.container-button {
+    display: flex;
+}
+
+/* boton guardar */
+.btn-guardar {
+    background: #1bb2a5;
+    border: 0;
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.bi-floppy {
+    color: #000000e5;
+}
+button:hover{
+    background-color: #e8406b; 
+  }
+
+@media (max-width: 576px) { 
+    .container-principal {
+        overflow: auto;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+    .container-editar {
+        width: 20rem;
+        margin-bottom: 4rem;
+    }
+    form {
+        width: 13rem;
+    }
+    .bi-trash {
+        font-size: 14px;
+    }
+}

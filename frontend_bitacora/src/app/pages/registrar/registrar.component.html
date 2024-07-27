@@ -1,0 +1,279 @@
+<app-header></app-header>
+<main>
+    <h1><i class="bi bi-database-add"></i> Registro de caso</h1>
+    <form [formGroup]="formulario">
+    <div class="row g-3 formulario">
+      <!-- formulario N° Caso --> 
+      <div class="col-md-3">
+        <label for="no_caso" class="form-label">N° Caso</label>
+        <input type="text" id="no_caso" formControlName="no_caso" class="form-control"  placeholder="WO00000001">
+        <div class="alert">
+          <span *ngIf="formulario.get('no_caso')?.errors?.['required'] && formulario.get('no_caso')?.touched">Este campo es obligatorio!</span>
+        </div>
+      </div>
+      <!-- formulario Tipó de solicitud --> 
+      <div class="col-md-3">
+        <label for="tipo_solicitud" class="form-label">Tipó de solicitud</label>
+        <select class="form-select" id="tipo_solicitud" formControlName="tipo_solicitud">
+          <option selected disabled value="">Seleccione...</option>
+          <option value="1">Creación</option>
+          <option value="2">Modificación</option>
+          <option value="3">Eliminación</option>
+          <option value="4">Reactivación</option>
+          <option value="5">Restauración contraseña</option>
+          <option value="6">Sincronización</option>
+          <option value="7">Inhabilitación</option>
+          <option value="8">Controles GSI</option>
+          <option value="9">Desactivación por Fraude</option>
+          <option value="10">Retiro RRHH</option>
+          <option value="11">Verificación</option>
+        </select>
+        <div class="alert">
+          <span *ngIf="formulario.get('tipo_solicitud')?.errors?.['required'] && formulario.get('tipo_solicitud')?.touched">Este campo es obligatorio!</span>
+        </div>
+      </div>
+      <!-- formulario Cantidad de usuarios -->
+      <div class="col-md-3">
+        <label for="cantidad_usuarios" class="form-label">Cantidad de usuarios</label>
+        <input type="number" id="cantidad_usuarios" class="form-control" formControlName="cantidad_usuarios" placeholder="1...">
+        <div class="alert">
+          <span *ngIf="formulario.get('cantidad_usuarios')?.errors?.['required'] && formulario.get('cantidad_usuarios')?.touched">Campo invalido!</span>
+        </div>
+      </div>
+      <!-- formulario Aplicacion -->
+      <div class="col-md-3">
+          <label for="aplicacion" class="form-label">Aplicacion</label>
+          <select class="form-select" id="aplicacion" formControlName="aplicacion">
+            <option selected disabled value="">Seleccione...</option>
+            <option value="1">AC</option>
+            <option value="2">AD</option>
+            <option value="3">AGENDAMIENTO</option>
+            <option value="4">APROVISIONADOR SIP CENTRALIZADO</option>
+            <option value="5">ASCARD</option>
+            <option value="6">ASISTENTE VIRTUAL</option>
+            <option value="7">AVANZA - TABLEAU</option>
+            <option value="8">BASES DE DATOS</option>
+            <option value="9">BD</option>
+            <option value="10">CALLIDUS</option>
+            <option value="11">CITRIX</option>
+            <option value="12">CLARITY</option>
+            <option value="13">CMAX</option>
+            <option value="14">CMC</option>
+            <option value="15">CORREO</option>
+            <option value="16">CRM</option>
+            <option value="17">DENOTHER</option>
+            <option value="18">DIME</option>
+            <option value="19">EMANAGEMENT</option>
+            <option value="20">ENTRUST</option>
+            <option value="21">FACTURADOR WEB</option>
+            <option value="22">GA NO TIENE ALCANCE</option>
+            <option value="23">GEOPROBE</option>
+            <option value="24">GERENCIA</option>
+            <option value="25">GESTOR DOCUMENTAL</option>
+            <option value="26">GEVENUE - FRONT</option>
+            <option value="27">GPON NETNUMENT</option>
+            <option value="28">GPON U2000</option>
+            <option value="29">HENDRIX</option>
+            <option value="30">HERRAMIENTA LABORAL FIJA</option>
+            <option value="31">HERRAMIENTA LABORAL MOVIL</option>
+            <option value="32">HERRAMIENTA LEGAL FIJA</option>
+            <option value="33">HERRAMIENTA LEGAL MOVIL WS</option>
+            <option value="34">IDENTIDAD</option>
+            <option value="35">IMEICOMCEL</option>
+            <option value="36">IVALUA</option>
+            <option value="37">IVR</option>
+            <option value="38">MULTIPLES APLICACIONES</option>
+            <option value="39">MYIT</option>
+            <option value="40">NETNUMENT</option>
+            <option value="41">NGN</option>
+            <option value="42">OCSDM SBC</option>
+            <option value="43">OFFICE 365</option>
+            <option value="44">OTA</option>
+            <option value="45">OTROS</option>
+            <option value="46">PBX ADMINISTRADA VIDEOCONFERENCIA</option>
+            <option value="47">POLIEDRO</option>
+            <option value="48">PORTAFIRMAS</option>
+            <option value="49">REPORTE Y LIBERACION</option>
+            <option value="50">RLM (RECEPCIÓN Y LEGALIZACIÓN)</option>
+            <option value="51">RMS</option>
+            <option value="52">RR</option>
+            <option value="53">RR, AGENDAMIENTO, GERENCIA</option>
+            <option value="54">SAC</option>
+            <option value="55">SAFARI</option>
+            <option value="56">SAP</option>
+            <option value="57">SAP 6.0</option>
+            <option value="58">SGA (FACTURACION FIJA)</option>
+            <option value="59">SICACOM</option>
+            <option value="60">SO</option>
+            <option value="61">SOFTSWICH IMS HUAWEI</option>
+            <option value="62">SOFTSWITCH CORPORATIVO</option>
+            <option value="63">SRT</option>
+            <option value="64">STF (COM037)</option>
+            <option value="65">SUBEX</option>
+            <option value="66">TACACS</option>
+            <option value="67">TMS</option>
+            <option value="68">VISOR</option>
+            <option value="69">VISOR DE FACTIBILIDAD</option>
+            <option value="70">YELLOWBRICK</option>
+          </select>
+          <div class="alert">
+            <span *ngIf="formulario.get('aplicacion')?.errors?.['required'] && formulario.get('aplicacion')?.touched">Este campo es obligatorio!</span>
+          </div>
+      </div>  
+      <!-- formulario Herramienta -->  
+      <div class="col-md-3">
+          <label for="herramienta" class="form-label">Herramienta</label>
+          <select class="form-select" id="herramienta" formControlName="herramienta">
+            <option selected disabled value="">Seleccione...</option>
+            <option value="1">PostMan</option>
+            <option value="2">Masiva CA</option>
+            <option value="3">Masiva Legado</option>
+            <option value="4">Legado</option>
+            <option value="5">CA</option>
+            <option value="6">Freya</option>
+            <option value="7">Masivo OIM</option>
+            <option value="8">OIM</option>
+            <option value="9">Service Manager</option>
+            <option value="10">No aplica</option>
+          </select>
+          <div class="alert">
+            <span *ngIf="formulario.get('herramienta')?.errors?.['required'] && formulario.get('herramienta')?.touched">Este campo es obligatorio!</span>
+          </div>
+      </div>
+      <!-- formulario Estado del caso -->
+      <div class="col-md-3">
+          <label for="estado_caso" class="form-label">Estado del caso</label>
+          <select class="form-select" id="estado_caso" formControlName="estado_caso">
+            <option selected disabled value="">Seleccione...</option>
+            <option value="1">TERMINADO</option>
+            <option value="2">DEVUELTO</option>
+            <option value="3">ESCALADO</option>
+            <option value="4">DEVUELTO MESA FILTROS</option>
+            <option value="5">PENDIENTE</option>
+            <option value="6">MAL CATEGORIZADO</option>
+          </select>
+          <div class="alert">
+            <span *ngIf="formulario.get('estado_caso')?.errors?.['required'] && formulario.get('estado_caso')?.touched">Este campo es obligatorio!</span>
+          </div>  
+      </div>    
+      <!-- formulario Turno -->
+      <div class="col-md-3">
+          <label for="turno" class="form-label">Turno</label>
+          <select class="form-select" id="turno" formControlName="turno">
+            <option selected disabled value="">Seleccione...</option>
+            <option value="1">T1</option>
+            <option value="2">T2</option>
+            <option value="3">T3</option>
+            <option value="4">T4</option>
+          </select>
+          <div class="alert">
+            <span *ngIf="formulario.get('turno')?.errors?.['required'] && formulario.get('turno')?.touched">Este campo es obligatorio!</span>
+          </div>
+      </div>  
+      <!-- formulario Cantidad aplicaciones -->
+      <div class="col-md-3">
+          <label for="cantidad_aplicaciones" class="form-label">Cantidad aplicaciones</label>
+          <input type="number" id="cantidad_aplicaciones" class="form-control" formControlName="cantidad_aplicaciones" placeholder="1-30">
+          <div class="alert">
+            <span *ngIf="formulario.get('cantidad_aplicaciones')?.errors?.['required'] && formulario.get('cantidad_aplicaciones')?.touched">Campo invalido!</span>
+          </div>
+      </div>  
+      <!-- formulario Lider -->
+      <div class="col-md-3">
+          <label for="lider" class="form-label">Lider</label>
+          <select class="form-select" id="lider" formControlName="lider">
+            <option selected disabled value="">Seleccione...</option>
+            <option value="1">Luis Felipe</option>
+            <option value="2">Gabriel</option>
+            <option value="3">Melissa</option>
+            <option value="4">Caterin</option>
+            <option value="5">CA</option>
+          </select>
+          <div class="alert">
+            <span *ngIf="formulario.get('lider')?.errors?.['required'] && formulario.get('lider')?.touched">Este campo es obligatorio!</span>
+          </div>
+      </div>
+      <!-- formulario grupo resolutor -->
+      <div class="col-md-3">
+          <label for="grupo_resolutor" class="form-label">Grupo resolutor</label>
+          <select class="form-select" id="grupo_resolutor" formControlName="grupo_resolutor">
+            <option selected disabled value="">Seleccione...</option>
+            <option value="1">COL-NOIT-GSAD-ACCESOS</option>
+            <option value="2">COL-IT-OPERACION-CA-IDS</option>
+          </select>
+          <div class="alert">
+            <span *ngIf="formulario.get('grupo_resolutor')?.errors?.['required'] && formulario.get('grupo_resolutor')?.touched">Este campo es obligatorio!</span>
+          </div>
+      </div>  
+      <!-- formulario ID tarea --><!-- se puede colocar como no aplica js-->
+      <div class="col-md-3">
+          <label for="id_tarea" class="form-label">ID tarea</label>
+          <input type="text" id="id_tarea" class="form-control" formControlName="id_tarea" placeholder="1200ad7f-b4139dfa-3ff4baef-450250">
+          <div class="alert">
+            <span *ngIf="formulario.get('id_tarea')?.errors?.['required'] && formulario.get('id_tarea')?.touched">Este campo es obligatorio!</span>
+          </div>
+      </div>
+      <!-- formulario observaciones -->
+      <div class="col-md-3 observaciones">
+        <label for="observaciones" class="form-label">Observaciones</label>
+        <textarea class="form-control" formControlName="observaciones" id="observaciones" rows="1"></textarea>
+        <div class="alert">
+          <span *ngIf="formulario.get('observaciones')?.errors?.['required'] && formulario.get('observaciones')?.touched">Este campo es obligatorio!</span>
+        </div>        
+      </div>
+
+      <!-- Usuarios -->
+      <div formArrayName="usuarios" class="col-md-12">
+        <div *ngFor="let user of usuarios.controls; let i = index" [formGroupName]="i" class="row g-3 usuarios">
+          <!-- cedula -->
+          <div class="col-md-3">
+            <label for="cedula" class="form-label">Cédula</label>
+            <input type="number" id="cedula" formControlName="cedula" class="form-control" placeholder="Ingresar cedula">
+            <div class="alert">
+              <span *ngIf="user.get('cedula')?.hasError('required') && user.get('cedula')?.touched">Campo invalido!</span>
+            </div> 
+          </div>
+          <!-- identidad_cliente -->
+          <div class="col-md-3">
+            <label for="identidad_cliente" class="form-label">Identidad</label>
+            <input type="text" id="identidad_cliente" formControlName="identidad_cliente" class="form-control" placeholder="Ingresar ID">
+            <div class="alert">
+              <span *ngIf="user.get('identidad_cliente')?.hasError('required') && user.get('identidad_cliente')?.touched">Campo invalido!</span>
+            </div> 
+          </div>
+          <!-- nombre -->
+          <div class="col-md-3">
+            <label for="nombres" class="form-label">Nombres</label>
+            <input type="text" id="nombres" formControlName="nombres" class="form-control" placeholder="Ingresar nombres">
+            <div class="alert">
+              <span *ngIf="user.get('nombres')?.hasError('required') && user.get('nombres')?.touched">Este campo es obligatorio!</span>
+            </div> 
+          </div>
+          <!-- apellidos -->
+          <div class="col-md-3">
+            <label for="apellidos" class="form-label">Apellidos</label>
+            <input type="text" id="apellidos" formControlName="apellidos" class="form-control" placeholder="Ingresar apellidos">
+            <div class="alert">
+              <span *ngIf="user.get('apellidos')?.hasError('required') && user.get('apellidos')?.touched">Este campo es obligatorio!</span>
+            </div> 
+          </div>
+          <!-- boton eliminar usuario -->
+          <div class="col-md-3">
+            <button type="button" (click)="deleteUser(i)" class="btn btn-eliminar" *ngIf="usuarios.length > 1"><i class="bi bi-dash-circle"></i> Eliminar</button>
+          </div>
+          <hr>
+        </div>
+      </div>   
+      
+      <div class="container">
+        <!-- boton agregar usuario -->
+        <button type="button" (click)="addUser()" class="btn btn-agregar"><i class="bi bi-plus-circle"></i> Agregar Usuario</button>
+        <!-- Boton guardar -->
+        <button class="btn btn-guardar" type="submit" (click)="onSubmit()"><i class="bi bi-floppy"></i> Guardar</button>  
+      </div>            
+    </div>
+    </form>
+    
+</main>
+<app-footer></app-footer>
+

@@ -1,0 +1,17 @@
+{
+  "routes": [
+    "/",
+    "/admin",
+    "/components",
+    "/components/consultar",
+    "/components/registrar",
+    "/components/reportes",
+    "/editar-usuario",
+    "/home",
+    "/login",
+    "/menu-admin",
+    "/registrar-usuario",
+    "/soporte",
+    "/technical"
+  ]
+}

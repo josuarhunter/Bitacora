@@ -1,0 +1,34 @@
+// estilos pie de pagina
+footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    width: 100%;
+  }
+
+.container1 {
+    background: #152330;
+    width: 100%;
+    height: 3rem;
+  }
+.container2 {
+    background:#111c26 ; 
+    width: 100%;
+    height: 4rem;
+  }
+  p {
+    margin: auto;
+    padding: 1rem;
+  }
+
+  // estilos para dispositivos moviles
+  @media (max-width: 767px) {
+    footer {
+      width: 100%;
+    }
+    .container1 {
+      height: auto;
+    }
+  }

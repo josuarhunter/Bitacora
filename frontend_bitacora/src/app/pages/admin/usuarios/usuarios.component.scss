@@ -1,0 +1,146 @@
+/* contenedor principal  */
+.container-principal {
+    min-height: 100vh;
+}
+.usuarios {
+    margin: auto;
+    margin-bottom: 2rem;
+    width: 60rem;
+    border-color: #1bb2a5;
+    box-shadow: 0px 0px 15px 2px rgb(27, 178, 165);
+}
+
+h1 {
+    margin: auto;
+    text-align: center;
+    padding: 1rem;
+    font-size: 2rem;
+    width: 20rem;
+}
+
+.menu {
+    display: flex;
+    background: #111c26;
+    height: 5.6rem;
+}
+.form-busqueda {
+    margin: auto;
+    display: flex;
+}
+/* contenedor busqueda */
+.busqueda {
+    margin: auto;
+    width: 12rem;
+    height: 5rem;
+    
+}
+    label {
+        color: white;
+        margin-bottom: .2rem;
+    }
+    .form-control {
+        width: 12rem;
+        height: 2rem;
+        margin: auto;
+    }
+    .alert {
+        font-size: 11px;
+        color: red;
+        margin: auto;
+        margin-left: auto;
+        padding: 0;
+        margin-left: 11px;
+      }
+    /* boton buscar */
+    .btn-buscar {
+        background: #1bb2a5;
+        border: 0;
+        margin: auto;
+        margin-left: 2rem;
+        margin-top: 24px;
+    }
+
+
+/* boton registrar */
+.btn-registrar {
+    background: #1bb2a5;
+    margin: auto;
+}
+/* boton home */
+.btn-home {
+    background: #1bb2a5;
+    margin: auto;
+    margin-right: 25px;
+}
+
+/* tabla */
+table {
+    width: 60rem;
+    font-size: 15px;
+    margin: auto;
+    border: solid #1bb2a5;
+}
+
+  /* celda de tablas */
+  .table td, .table th {
+    text-align: center; 
+  }
+
+    /* botones tabla*/
+    .btn-editar {
+        background: #1bb2a5;
+        margin: auto;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    .btn-eliminar {
+        background: #c74b4b;
+        margin: auto;
+        margin-left: 5px;
+    }
+    .btn-eliminar:hover{
+        background-color: #800808af; 
+      }
+
+    button:hover{
+        background-color: #2c857c; 
+      }
+
+
+/* estilos pantalla pequeña */
+@media (max-width: 576px) { 
+    h1 {
+        font-size: 1.5rem;
+    }
+    .usuarios {
+        width: 22rem;
+    }
+    .menu {
+        display: block;
+        width: 22rem;
+        margin: auto;
+        height: 8rem;
+    }
+    /* boton registrar */
+    .btn-registrar {
+        margin: auto;
+        margin-left: 14px;
+        margin-right: 117px;
+    }
+    /* boton home */
+    .btn-home {
+        margin: auto;
+    }
+
+    table {
+        width: 22rem;
+    }
+    .container-resultado {
+        width: 100%;
+        overflow: auto;
+    }
+    thead th, td {
+        white-space: nowrap; 
+      }
+    
+  } 

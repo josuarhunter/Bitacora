@@ -1,0 +1,136 @@
+/* contenedor principal */
+main{
+  min-height: 100vh;
+  margin-bottom: 2rem;
+} 
+/* titulo */
+h1 {
+  margin: auto;
+  text-align: center;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+/* contenedor formulario */
+.formulario {
+    margin: auto;
+    display: flex;
+    margin-bottom: 2rem;
+    border: solid 2px #1bb2a5;
+    border-radius: 1rem;
+    max-width: 65rem;
+    padding-left: 5px;
+}
+/* contenedor mensaje de error */
+.alert {
+  font-size: 11px;
+  color: red;
+  margin: auto;
+  margin-left: auto;
+  padding: 0;
+  margin-left: 11px;
+}
+
+.col-md-3 {
+    width: 16rem;
+  }
+option {
+  font-size: 0.9rem;
+}
+/* contenedor observaciones */
+.observaciones {
+  width: 64rem;
+}
+textarea { 
+    height: 4rem;
+}
+/* boton agregar */
+.btn{
+  background: #1bb2a5;
+  color: white;
+}
+
+/* boton guardar */
+.btn-guardar {
+    border: 0;
+    margin: auto;
+    margin-left: 18rem;
+    
+}
+.btn:hover{
+  background-color: #2c857c; 
+}
+
+.usuarios {
+  padding: 0;
+}
+
+.container {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+/* estilo botones */
+.agregar {
+    margin: auto;
+    margin-left: 0;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-right: 0;
+    max-width: 14rem;
+    display: grid;
+}
+.btn-eliminar {
+  background: #e8406b;
+}
+.btn-eliminar:hover{
+  background-color: #be284d; 
+}
+
+hr {
+  color: #1bb2a5;
+  opacity: 100;
+  max-width: 63rem;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem; 
+}
+/* sombra a formularios */
+  input, textarea, select {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.66);
+  }
+/* estilos pantalla pequeña */
+  @media (max-width: 576px) { 
+    h1 {
+      font-size: 1.5rem;
+  }
+    .formulario {
+      justify-content: center;
+      width: 20rem;
+    }
+    .usuarios {
+      justify-content: center;
+    }
+    .observaciones {
+      width: 16rem;
+    }
+    .container {
+      display: grid;
+    }
+    .btn-guardar {
+      margin: auto;
+      margin-left: auto;
+      margin-top: 1rem;
+    }
+    .btn-agregar{
+      margin: auto;
+    }
+    .btn-eliminar {
+      margin-top: 0;
+    }
+    hr {
+      width: 18rem;
+    }
+  } 
+  
+
